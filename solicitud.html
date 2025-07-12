@@ -8,118 +8,46 @@
 </head>
 <body>
     <div class="container">
-        <div class="form-header">
-            <h1>Nueva Solicitud de Servicio</h1>
-            <p>Complete los datos para procesar la solicitud.</p>
-        </div>
+        <div class="form-header"><h1>Nueva Solicitud de Servicio</h1><p>Complete los datos para procesar la solicitud.</p></div>
         <form id="solicitudForm">
             <input type="hidden" name="formType" value="solicitud">
-
             <div class="grid-columns">
-                <div class="form-group">
-                    <label for="fecha">Fecha de Solicitud</label>
-                    <input type="text" id="fecha" name="Fecha" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="hora">Hora de Solicitud</label>
-                    <input type="text" id="hora" name="Hora" readonly>
-                </div>
+                <div class="form-group"><label for="fecha">Fecha</label><input type="text" id="fecha" name="Fecha" readonly></div>
+                <div class="form-group"><label for="hora">Hora</label><input type="text" id="hora" name="Hora" readonly></div>
             </div>
-
+            <div class="form-group"><label for="nombre">Nombre</label><input type="text" id="nombre" name="Nombre" placeholder="Ingrese primer nombre y apellido" required></div>
+            <div class="form-group"><label for="cedula">Cedula</label><input type="number" id="cedula" name="Cedula" placeholder="8 dígitos numéricos" min="1000000" max="99999999" required></div>
+            <div class="form-group"><label for="contacto">Contacto</label><input type="tel" id="contacto" name="Contacto" placeholder="11 dígitos numéricos" pattern="[0-9]{1,11}" required></div>
+            <div class="form-group"><label for="contacto2">Contacto2</label><input type="tel" id="contacto2" name="Contacto2" placeholder="Opcional" pattern="[0-9]{1,11}"></div>
             <div class="form-group">
-                <label for="nombre">Nombre y Apellido</label>
-                <input type="text" id="nombre" name="Nombre y Apellido" placeholder="Ingrese primer nombre y apellido" required>
-            </div>
-            <div class="form-group">
-                <label for="cedula">Cédula</label>
-                <input type="number" id="cedula" name="Cédula" placeholder="8 dígitos numéricos, a partir de 1000000" min="1000000" max="99999999" required>
-            </div>
-            <div class="form-group">
-                <label for="contacto">Contacto</label>
-                <input type="tel" id="contacto" name="Contacto" placeholder="Hasta 11 dígitos numéricos" pattern="[0-9]{1,11}" required>
-            </div>
-            <div class="form-group">
-                <label for="contacto2">Contacto 2 (Opcional)</label>
-                <input type="tel" id="contacto2" name="Contacto2" pattern="[0-9]{1,11}">
-            </div>
-
-            <div class="form-group">
-                <label for="ubicacion">Ubicación</label>
-                <select id="ubicacion" name="Ubicacion" required>
-                    <option value="" disabled selected>Seleccione una opción</option>
-                    <option value="Carrizal">Carrizal</option>
-                    <option value="Tejerias">Tejerias</option>
-                    <option value="Puerta Morocha">Puerta Morocha</option>
-                    <option value="San Diego">San Diego</option>
-                    <option value="Caracas">Caracas</option>
-                    <option value="San Antonio">San Antonio</option>
-                    <option value="Los Teques">Los Teques</option>
-                </select>
+                <label for="ubicacion">Ubicacion</label>
+                <select id="ubicacion" name="Ubicacion" required><option value="" disabled selected>Seleccione</option><option value="Carrizal">Carrizal</option><option value="Tejerias">Tejerias</option><option value="Puerta Morocha">Puerta Morocha</option><option value="San Diego">San Diego</option><option value="Caracas">Caracas</option><option value="San Antonio">San Antonio</option><option value="Los Teques">Los Teques</option></select>
             </div>
             <div class="form-group">
                 <label for="municipio">Municipio</label>
-                <select id="municipio" name="Municipio" required>
-                    <option value="" disabled selected>Seleccione una opción</option>
-                    <option value="Guaicaipuro">Guaicaipuro</option>
-                    <option value="Los Salias">Los Salias</option>
-                    <option value="Cecilio Acosta">Cecilio Acosta</option>
-                    <option value="Libertador">Libertador</option>
-                    <option value="Carrizal">Carrizal</option>
-                    <option value="Revenga">Revenga</option>
-                    <option value="Santos Michelena">Santos Michelena</option>
-                    <option value="Sucre">Sucre</option>
-                    <option value="Otro">Otro</option>
-                </select>
+                <select id="municipio" name="Municipio" required><option value="" disabled selected>Seleccione</option><option value="Guaicaipuro">Guaicaipuro</option><option value="Los Salias">Los Salias</option><option value="Cecilio Acosta">Cecilio Acosta</option><option value="Libertador">Libertador</option><option value="Carrizal">Carrizal</option><option value="Revenga">Revenga</option><option value="Santos Michelena">Santos Michelena</option><option value="Sucre">Sucre</option><option value="Otro">Otro</option></select>
             </div>
-
             <div class="form-group"><label for="sector">Sector</label><input type="text" id="sector" name="Sector" required></div>
-            <div class="form-group"><label for="calle">Calle/Avenida</label><input type="text" id="calle" name="Calle" required></div>
-            <div class="form-group"><label for="casa">Casa/Edif</label><input type="text" id="casa" name="Casa" required></div>
-            <div class="form-group"><label for="email">Correo electrónico</label><input type="email" id="email" name="Email" placeholder="ejemplo@correo.com" required></div>
-            
+            <div class="form-group"><label for="calle">Calle</label><input type="text" id="calle" name="Calle" required></div>
+            <div class="form-group"><label for="casa">Casa</label><input type="text" id="casa" name="Casa" required></div>
+            <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="Email" required></div>
             <div class="form-group">
                 <label for="servicio">Servicio</label>
-                <select id="servicio" name="Servicio" required>
-                    <option value="" disabled selected>Seleccione una opción</option>
-                    <option value="Domiciliario">Domiciliario</option>
-                    <option value="Empresarial">Empresarial</option>
-                </select>
+                <select id="servicio" name="Servicio" required><option value="" disabled selected>Seleccione</option><option value="Domiciliario">Domiciliario</option><option value="Empresarial">Empresarial</option></select>
             </div>
-            <div class="form-group">
-                <label for="disponibilidad">Dia de disponibilidad</label>
-                <input type="date" id="disponibilidad" name="Dia de disponibilidad" required>
-            </div>
-
+            <div class="form-group"><label for="disponibilidad">Disponibilidad</label><input type="date" id="disponibilidad" name="Disponibilidad" required></div>
             <div class="form-group">
                 <label for="asesor">Asesor</label>
-                <select id="asesor" name="Asesor" required>
-                    <option value="" disabled selected>Seleccione una opción</option>
-                    <option value="Yaisen Herrera">Yaisen Herrera</option>
-                    <option value="Lorena Esqueda">Lorena Esqueda</option>
-                    <option value="Cindy Infante">Cindy Infante</option>
-                    <option value="Randy Moreno">Randy Moreno</option>
-                    <option value="Otro">Otro</option>
-                </select>
+                <select id="asesor" name="Asesor" required><option value="" disabled selected>Seleccione</option><option value="Yaisen Herrera">Yaisen Herrera</option><option value="Lorena Esqueda">Lorena Esqueda</option><option value="Cindy Infante">Cindy Infante</option><option value="Randy Moreno">Randy Moreno</option><option value="Otro">Otro</option></select>
                 <input type="text" id="otro_asesor" name="otro_asesor" class="hidden-field" placeholder="Escriba el nombre del asesor">
             </div>
             <div class="form-group">
                 <label for="fuente">Fuente</label>
-                <select id="fuente" name="Fuente" required>
-                    <option value="" disabled selected>Seleccione una opción</option>
-                    <option value="Folleto">Folleto</option>
-                    <option value="Valla Publicitaria">Valla Publicitaria</option>
-                    <option value="Evento">Evento</option>
-                    <option value="Redes Sociales">Redes Sociales</option>
-                    <option value="Recomendación">Recomendación</option>
-                    <option value="Otro">Otro</option>
-                </select>
+                <select id="fuente" name="Fuente" required><option value="" disabled selected>Seleccione</option><option value="Folleto">Folleto</option><option value="Valla Publicitaria">Valla Publicitaria</option><option value="Evento">Evento</option><option value="Redes Sociales">Redes Sociales</option><option value="Recomendación">Recomendación</option><option value="Otro">Otro</option></select>
                 <input type="text" id="otra_fuente" name="otra_fuente" class="hidden-field" placeholder="Escriba el tipo de fuente">
             </div>
-
             <div id="status-message" class="status-message"></div>
-            <div class="form-buttons">
-                <button type="submit" class="btn-primary">Guardar y Enviar</button>
-            </div>
+            <div class="form-buttons"><button type="submit" class="btn-primary">Guardar y Enviar</button></div>
         </form>
     </div>
     <script src="solicitud-script.js"></script>
